@@ -1,0 +1,47 @@
+<style>
+    /* margin 是 element 边距，即element对外面的element的距离 */
+    /* padding 可以理解成 element 的内边距，即element对内的element的距离 */
+    /* note: 应该是有一个默认的 margin ，因此我在下面会有一个 margin:0px 的设置 */
+
+    /* .injected-text {
+        margin-bottom: -25px;
+        text-align: center;
+    } */
+
+    .box {
+        border-style: solid;
+        border-color: black;
+        border-width: 5px;
+        text-align: center;
+    }
+
+    .yellow-box {
+        background-color: yellow;
+        /* padding: 10px; */
+    }
+
+    .red-box {
+        background-color: crimson;
+        color: #fff;
+        padding: 20px;
+        /* margin-top: 100px; */
+        /* margin-bottom: 100px; */
+        /* margin-left: 100px; */
+        /* margin-right: 100px; */
+        margin: 0px;
+    }
+
+    .blue-box {
+        background-color: blue;
+        color: #fff;
+        padding: 20px;
+        margin: 0px;
+    }
+</style>
+
+<!-- <h5 class="injected-text">margin</h5> -->
+
+<div class="box yellow-box">
+    <h5 class="box red-box">padding</h5>
+    <h5 class="box blue-box">padding</h5>
+</div>

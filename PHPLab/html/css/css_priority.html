@@ -1,0 +1,36 @@
+<style>
+    /* body 的设定会被下级继承 or 覆写 */
+    body {
+        background-color: black;
+        color: green;
+        font-family: monospace;
+    }
+
+    /* id 有比 class 更高的优先级 */
+    #orange-text {
+        color: orange;
+    }
+
+    .pink-text {
+        /* important 把这个属性提升为最高的优先级 */
+        /* color: pink !important; */
+        color: pink;
+    }
+
+    /* blue 在 pink 后定义，会覆盖掉其设定（加入 class 中有 pink 和 blue） */
+    .blue-text {
+        color: blue;
+    }
+</style>
+
+<!-- 继承 body 的设定 -->
+<h2>hello world</h2>
+
+<h2 class="pink-text">hello world with pink text</h2>
+
+<h2 class="pink-text blue-text">hello world with blue text</h2>
+
+<h2 class="pink-text" id="orange-text">hello world with id of orange text</h2>
+
+<!-- but inline style 有着更高的优先级 -->
+<h2 class="pink-text" id="orange-text" style="color:white">hello world with white color set by inline style</h2>

@@ -1,0 +1,4 @@
+CREATE TABLE `member` (
+`name` varchar(255) NOT NULL DEFAULT '',
+`age` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

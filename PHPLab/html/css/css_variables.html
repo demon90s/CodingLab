@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <style>
+            /* root 定义的变量，可以直接使用，注意，开头是一个: */
+            :root {
+                --blue-skin:blue;
+            }
+
+            .skinvars {
+                /* 定义一个变量 */
+                --yellow-skin: yellow;
+            }
+
+            .paragragh {
+                /* 使用变量，找不到的话，使用默认的 gray */
+                background-color: var(--yellow-skin, gray);
+            }
+ 
+            .paragragh2 {
+                background-color: var(--blue-skin, gray);
+            }
+        </style>
+    </head>
+    <body>
+        <p class="skinvars paragragh">Hello world, see this skin with variable setting</p>
+
+        <p class="paragragh2">Hello world with root skin setting</p>
+    </body>
+</html>

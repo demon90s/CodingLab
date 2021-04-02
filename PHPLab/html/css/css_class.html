@@ -1,0 +1,66 @@
+<style>
+    /* class style 会覆盖掉对应的 element style，比如 .blu-text 的 color 会覆盖掉 p 的 color */
+
+    /* 设置 <input type="radio">，同样的方法可以设置 checkbox 等其他 type */
+    [type='radio'] {
+        margin: 10px;
+    }
+
+    p {
+        color: gray;
+        background-color: silver;
+        font-size: 20px;
+        font-family: monospace;
+    }
+
+    .blue-text {
+        color: blue;
+    }
+
+    .warning-text {
+        color: red;
+        font-size: 30px; 
+    }
+
+    .larger-image {
+        width: 500px;
+    }
+
+    .green-think-border {
+        border-color: green;
+        border-width: 5px;
+        border-style: solid;
+    }
+
+    .green-circle-border {
+        border-color: green;
+        border-width: 5px;
+        border-style: solid;
+        /* 50% make circle border */
+        border-radius: 50%;
+    }
+</style>
+
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <p>paragragh with default elment style</p>
+        <p class="blue-text">blue paragragh with class blue-text</p>
+        <p class="warning-text">warning sentence, notice it's "font-size"</p>
+
+        <img src="../assets/spring.jpg" class="larger-image" >
+
+        <p>image with class green-think-border:</p>
+        <img src="../assets/spring.jpg" class="larger-image green-think-border" >
+
+        <p>image with circle border</p>
+        <img src="../assets/miemie.png" class="green-circle-border" >
+
+        <p>input radio style</p>
+        <input name="rd" type="radio">radio1</input>
+        <input name="rd" type="radio">radio2</input>
+    </body>
+</html>
