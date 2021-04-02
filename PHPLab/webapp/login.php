@@ -1,6 +1,26 @@
 <?php
+define("TITLE", "Login");
+include "template/header.html";
 
-function print_login_form()
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    if ($email == "demon90s@163.com" && $password == "123456") {
+        // print "log in succ";
+
+        ob_end_clean();
+        header('location: welcome.php');
+        exit();
+    }
+    else
+    {
+        //print_login_form();
+
+        print "invalid email or password";
+    }
+}
+else
 {
     print '
     <form method="post" action="login.php">
@@ -17,31 +37,6 @@ function print_login_form()
     </p>
     </form>
     ';
-}
-
-?>
-
-<?php
-define("TITLE", "Login");
-include "template/header.html";
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    if ($email == "demon90s@163.com" && $password == "123456") {
-        print "log in succ";
-    }
-    else
-    {
-        print_login_form();
-
-        print "invalid email or password";
-    }
-}
-else
-{
-    print_login_form();
 }
 ?>
 
