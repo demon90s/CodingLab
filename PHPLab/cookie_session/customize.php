@@ -36,7 +36,7 @@ if (isset($_POST['font_size'], $_POST['font_color'])) {
             <option value="">Font Color</option>
             <option value="999">Gray</option>
             <option value="0c0">Green</option>
-            <option value="oof">Blue</option>
+            <option value="00f">Blue</option>
         </select>
 
         <input type="submit" name="submit" value="Set My Preferences" />
