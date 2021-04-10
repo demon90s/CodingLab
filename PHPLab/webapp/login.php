@@ -9,6 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($email == "demon90s@163.com" && $password == "123456") {
         // print "log in succ";
 
+        // session 开启 session 缓冲
+        session_start();
+        $_SESSION['email'] = $email;
+        $_SESSION['loggedin'] = time();
+        // session
+
         ob_end_clean();
         header('location: welcome.php');
         exit();
