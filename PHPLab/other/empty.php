@@ -36,4 +36,11 @@ else
     echo "2";   // 空字符串返回 false
 }
 
+echo "<br />";
+
+// 0 也是 empty 的
+empty(0) == TRUE or die("FALSE");
+
+echo "empty PASS";
+
 ?>
