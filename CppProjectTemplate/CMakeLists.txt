@@ -9,6 +9,7 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
 elseif (CMAKE_SYSTEM_NAME STREQUAL "Windows")
     # Windows
     #add_definitions(/wd"4996" /wd"4819" /wd"4129")
+    set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT "main")
 endif()
 
 # choose c++ standard
