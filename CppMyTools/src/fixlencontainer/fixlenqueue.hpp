@@ -2,6 +2,7 @@
 
 #include <string.h>
 #include <stdexcept>
+#include <functional>
 
 // 定长队列，T只能放基础类型，不能放指针
 // 可用于像抽奖日志之类的东西
