@@ -27,15 +27,15 @@
 #include <assert.h>
 #include <stdio.h>
 
-int main()
+void test1()
 {
-	char hostname[255];
+		char hostname[255];
 	gethostname(hostname, sizeof(hostname));
 
 	struct hostent *he = gethostbyname(hostname);
 	if (he == NULL) {
 		fprintf(stderr, "gethostbyname failed\n");
-		return 1;
+		return;
 	}
 
 	// print host data
@@ -66,6 +66,51 @@ int main()
 		}
 		printf("\n");
 	}
+}
+
+int connect_to_server(const char *server, short port)
+{
+	int hSocket = socket(AF_INET, SOCK_STREAM, 0);
+	if (hSocket == -1)
+		return -1;
+
+	struct sockaddr_in addrSrv = { 0 };
+	struct hostent *pHostent = NULL;
+
+	// 如果传入的参数 server 的值是 somesite.com 这种域名形式，则 if 条件成立
+	if ((addrSrv.sin_addr.s_addr = inet_addr(server)) == INADDR_NONE)
+	{
+		// 接着调用 gethostbyname 将十进制点分法 IP 地址解析成4字节的整型数值
+		pHostent = gethostbyname(server);
+		if (NULL == pHostent)
+			return -1;
+
+		// 使用 gethostyname 解析域名时可能会得到多个IP地址，常使用第1个IP
+		addrSrv.sin_addr.s_addr = *((unsigned long *)pHostent->h_addr_list[0]);
+	}
+
+	addrSrv.sin_family = AF_INET;
+	addrSrv.sin_port = htons(port);
+	int ret = connect(hSocket, (struct sockaddr *)&addrSrv, sizeof(addrSrv));
+	if (ret == -1)
+		return -1;
+
+	return 0;
+}
+
+void test2()
+{
+	if (0 == connect_to_server("baidu.com", 80))
+		printf("connect succ\n");
+	else
+		printf("connect fail\n");
+}
+
+int main()
+{
+	//test1();
+
+	test2();
 
 	return 0;
 }

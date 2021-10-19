@@ -22,6 +22,12 @@ f_userdel()
     ls /home
 }
 
+# 批量修改用户帐号密码的方法
+# 使用 chpasswd
+# 先创建一个文件 file.txt，以用户名:密码为一对
+# test:1234567890
+# chapasswd < file.txt
+
 f_main()
 {
     f_useradd
