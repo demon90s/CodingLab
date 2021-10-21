@@ -99,6 +99,15 @@ void test_array()
     std::cout << p.get() << std::endl;
 }
 
+// c++17后，可以直接创建数组的shared_ptr
+void test_array2()
+{
+    std::shared_ptr<char[]> p(new char[1024]);
+
+    strcpy(p.get(), "hello");
+    std::cout << p.get() << std::endl;
+}
+
 int main()
 {
     //test1();
@@ -106,7 +115,8 @@ int main()
     //test_deleter();
     //test_reset();
     //test_array();
-    test_deleter2();
+    test_array2();
+    //test_deleter2();
 
     return 0;
 }
