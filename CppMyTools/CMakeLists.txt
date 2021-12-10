@@ -22,3 +22,14 @@ file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*)
 
 add_executable(main ${SRC_FILES})
 target_link_libraries(main ${LIBS})
+
+######################################################################
+# examples
+
+file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/example/Instance/*)
+add_executable(instance ${SRC_FILES})
+
+file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/example/hhmm/*)
+add_executable(hhmm ${SRC_FILES})
+
+######################################################################

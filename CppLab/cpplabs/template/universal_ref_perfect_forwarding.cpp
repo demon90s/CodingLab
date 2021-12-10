@@ -27,6 +27,7 @@ void foo(Bar &&b)
 template<typename T>
 void relay(T &&v)
 {
+    //foo(v); compile error
     foo(std::forward<T>(v));
 }
 

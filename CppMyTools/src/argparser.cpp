@@ -1,5 +1,4 @@
-#include "ArgParser.hpp"
-#include "ArgParser.hpp"
+#include "argparser.hpp"
 #include <string.h>
 
 namespace
