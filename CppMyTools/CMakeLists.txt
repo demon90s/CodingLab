@@ -32,4 +32,7 @@ add_executable(instance ${SRC_FILES})
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/example/hhmm/*)
 add_executable(hhmm ${SRC_FILES})
 
+file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/example/instance2/*)
+add_executable(instance2 ${SRC_FILES})
+
 ######################################################################
