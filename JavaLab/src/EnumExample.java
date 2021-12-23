@@ -3,7 +3,7 @@ class FreshJuice {
     FreshJuiceSize size;
 }
 
-class EnumExample
+public class EnumExample
 {
     public static void main(String[] arg) {
         FreshJuice juice = new FreshJuice();
