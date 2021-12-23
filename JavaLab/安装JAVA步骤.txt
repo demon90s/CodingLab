@@ -1,0 +1,14 @@
+1. 安装JDK
+2. 安装JRE
+3. 配置环境变量 JAVA_HOME CLASSPATH PATH
+4. 测试命令 java -version, javac
+
+参考：
+windows安装
+https://www.runoob.com/java/java-environment-setup.html#linux-install
+
+centos7安装
+https://www.hangge.com/blog/cache/detail_2651.html
+
+ubuntu18.04安装
+https://www.cnblogs.com/lxc-2017/p/8991693.html
