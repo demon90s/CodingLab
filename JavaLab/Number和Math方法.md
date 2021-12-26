@@ -7,3 +7,14 @@ https://www.runoob.com/java/java-number.html
 字符串转换成int parseInt()
 
 返回一个随机数 random()
+
+基本类型的包装类
+基本类型                        包装类
+boolean                         Boolean
+byte                            Byte
+short                           Short
+int                             Integer
+long                            Long
+float                           Float
+double                          Double
+char                            Character

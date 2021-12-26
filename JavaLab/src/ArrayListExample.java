@@ -2,7 +2,12 @@ import java.util.*;
 
 // 测试遍历
 public class ArrayListExample {
-	public static void main(String[] args) {
+
+	// 遍历元素
+	static void testArrayListTravel() {
+
+		System.out.println("testArrayListTravel");
+
 		List<String> list = new ArrayList<String>();
 		list.add("Hello");
 		list.add("World");
@@ -32,5 +37,79 @@ public class ArrayListExample {
 		}
 
 		System.out.println("----------------");
+
+		// 使用for循环遍历
+		for (int i = 0; i < list.size(); ++i)
+		{
+			System.out.println(list.get(i));
+		}
+
+		System.out.println("----------------");
+	}
+
+	// 添加元素
+	static void testArrayListAdd() {
+		ArrayList<String> sites = new ArrayList<String>();
+		sites.add("Google");
+		sites.add("Runnoob");
+		sites.add("Taobao");
+		sites.add("Weibo");
+		System.out.println(sites);
+	}
+
+	// 访问元素 下标从0开始
+	static void testArrayListGet() {
+		ArrayList<String> sites = new ArrayList<String>();
+		sites.add("Google");
+		sites.add("Runnoob");
+		sites.add("Taobao");
+		sites.add("Weibo");
+		System.out.println(sites.get(1));			// Runnoob
+	}
+
+	// 修改元素
+	static void testArrayListSet() {
+		ArrayList<String> sites = new ArrayList<String>();
+		sites.add("Google");
+		sites.add("Runnoob");
+		sites.add("Taobao");
+		sites.add("Weibo");
+
+		System.out.println(sites.get(2));		// Taobao
+		sites.set(2, "Wiki");
+		System.out.println(sites.get(2));		// Wiki
+	}
+
+	// 删除元素
+	static void testArrayListRemove() {
+		ArrayList<String> sites = new ArrayList<String>();
+		sites.add("Google");
+		sites.add("Runnoob");
+		sites.add("Taobao");
+		sites.add("Weibo");
+
+		sites.remove(3);
+		System.out.println(sites);
+	}
+
+	// 排序 需要 import java.util.Collections
+	static void testCollectionsSort() {
+		ArrayList<Integer>sites = new ArrayList<Integer>();
+		sites.add(66);
+		sites.add(111);
+		sites.add(2);
+		sites.add(898);
+
+		Collections.sort(sites);
+		System.out.println(sites);
+	}
+
+	public static void main(String[] args) {
+		//testArrayListTravel();
+		//testArrayListAdd();
+		//testArrayListGet();
+		//testArrayListSet();
+		//testArrayListRemove();
+		testCollectionsSort();
 	}
 }
