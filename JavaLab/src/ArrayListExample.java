@@ -29,12 +29,18 @@ class Hero implements Comparable<Object> {
 		
 		// 如果this大于rhs，返回1，如果相等返回0,如果小于返回-1
 		if (capability != rhs_hero.capability) {
-			if (capability > rhs_hero.capability) {
-				return -1;
-			}
-			else {
-				return 1;
-			}
+			// if (capability > rhs_hero.capability) {
+			// 	return -1;
+			// }
+			// else {
+			// 	return 1;
+			// }
+
+			// 或者这样，如果值大的靠前，就用右边减左边
+			return rhs_hero.capability - capability;
+
+			// 如果值小的靠前，就有左边减去右边
+			//return capability - rhs_hero.capability;
 		}
 		else {
 			return name.compareTo(rhs_hero.name);
@@ -195,7 +201,7 @@ public class ArrayListExample {
 		//testArrayListSet();
 		//testArrayListRemove();
 		//testCollectionsSort();
-		//testCollectionsSort2();
-		testCollectionsSort3();
+		testCollectionsSort2();
+		//testCollectionsSort3();
 	}
 }
