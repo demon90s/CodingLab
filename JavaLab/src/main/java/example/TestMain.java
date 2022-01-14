@@ -1,4 +1,5 @@
 
+
 package example;
 class Foo {
 
