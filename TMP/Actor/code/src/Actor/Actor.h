@@ -5,12 +5,12 @@
 #include <mutex>
 
 #define PUSH_TASK(actor, member_function) \
-	(actor)->PushTask([&]() { (actor)->member_function(); })
+	(actor)->PushTask([actor]() { (actor)->member_function(); })
 
 #define PUSH_TASK_EX(actor, member_function, ...) \
 	do {\
 		ActorTask actor_task; \
-		actor_task.SetFunc([&, __VA_ARGS__](ActorTask *actor_task) { \
+		actor_task.SetFunc([actor, __VA_ARGS__](ActorTask *actor_task) { \
 			actor->member_function(__VA_ARGS__);\
 		});\
 		actor->PushTask(actor_task);\

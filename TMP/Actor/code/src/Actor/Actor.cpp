@@ -28,6 +28,8 @@ void Actor::PushTask(const ActorTask& actor_task)
 			m_is_in_global = true;
 		}
 	}
+
+	ActorManager::GetInstance()->NotifyThread();
 }
 
 void Actor::PushTask(std::function<void()> func)

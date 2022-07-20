@@ -1,5 +1,6 @@
 #include "LogActor.h"
 #include "Actor/ActorManager.h"
+#include "benchmarking.hpp"
 
 #include <iostream>
 
@@ -44,6 +45,10 @@ void LogActor::Print(const std::string& content)
 
 void LogActor::PrintHelper(ActorTask* actor_task)
 {
+	//BenchMarking<> bm([](std::size_t cost) {
+	//	std::cout << "PrintHelper cost: " << cost << "ms" << std::endl;
+	//	});
+
 	std::string content_buff;
 	actor_task->PopParam(content_buff);
 
