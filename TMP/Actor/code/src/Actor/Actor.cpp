@@ -3,16 +3,29 @@
 
 void Actor::ProcessTask()
 {
-	std::list<ActorTask> tmp_task_queue;
+	// 拿出一个任务执行 在未执行完毕前，可以添加任务但不能注册到ActorManager(m_is_in_global控制)
+
+	ActorTask actor_task;
+
 	{
 		std::lock_guard<std::mutex> lock(m_task_queue_mutex);
-		tmp_task_queue.swap(m_task_queue);
-		m_is_in_global = false;
+		if (!m_task_queue.empty())
+		{
+			actor_task = m_task_queue.front();
+			m_task_queue.pop_front();
+		}
 	}
 
-	for (ActorTask& actor_task : tmp_task_queue)
+	actor_task.Run();
+
 	{
-		actor_task.Run();
+		std::lock_guard<std::mutex> lock(m_task_queue_mutex);
+		m_is_in_global = false;
+		if (!m_task_queue.empty())
+		{
+			ActorManager::GetInstance()->AddActor(this);
+			m_is_in_global = true;
+		}
 	}
 }
 

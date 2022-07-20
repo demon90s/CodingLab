@@ -16,7 +16,14 @@ public:
 
 	void ChangeName(const std::string& name);
 
+	void Uplevel();
+
+public:
+	const std::string& GetName() const { return m_name; }
+	int GetLevel() const { return m_level; }
+
 private:
 	LogActor m_log{"PlayerActor"};
 	std::string m_name;
+	int m_level = 0;
 };

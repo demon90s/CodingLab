@@ -15,7 +15,10 @@ public:
 
 	void Run()
 	{
-		m_func(this);
+		if (m_func)
+		{
+			m_func(this);
+		}
 	}
 
 	void SetFunc(Func func)
