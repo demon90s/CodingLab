@@ -2,6 +2,7 @@
 
 #include "Actor/Actor.h"
 #include "LogActor.h"
+#include "TreadStl/TSString.h"
 
 #include <string>
 
@@ -18,12 +19,12 @@ public:
 	void Uplevel();
 
 public:
-	const std::string &GetName() const { return m_name; }
+	std::string GetName() const { return m_name.GetStr(); }
 	int GetLevel() const { return m_level; }
 
 private:
 	LogActor m_log{"PlayerActor"};
 
-	std::string m_name;
+	TSString m_name;
 	int m_level = 0;
 };
