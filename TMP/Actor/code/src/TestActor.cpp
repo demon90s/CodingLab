@@ -15,12 +15,12 @@ void TestActor::Test()
 	m_log.Print("Test Begin");
 
 	// example
-	//{
-	//	auto player1 = new PlayerActor("player1");
-	//	auto player2 = new PlayerActor("player2");
-	//	PUSH_TASK(player1, PlayerActor::Hello);
-	//	PUSH_TASK(player2, PlayerActor::Hello);
-	//}
+	{
+		auto player1 = new PlayerActor("player1");
+		auto player2 = new PlayerActor("player2");
+		PUSH_TASK(player1, PlayerActor::Hello);
+		PUSH_TASK(player2, PlayerActor::Hello);
+	}
 
 	// example
 	//{
@@ -30,7 +30,7 @@ void TestActor::Test()
 	//	std::string name = "PLAYER1";
 	//	PUSH_TASK_EX(player1, PlayerActor::ChangeName, name);
 
-	//	PUSH_TASK(player1, PlayerActor::Hello);
+	//	//PUSH_TASK(player1, PlayerActor::Hello);
 	//}
 
 	// example
@@ -48,12 +48,12 @@ void TestActor::Test()
 
 
 	// example
-	{
-		auto player1 = new PlayerActor("player1");
-		for (int i = 0; i < 10; ++i)
-		{
-			PUSH_TASK(player1, PlayerActor::Uplevel);
-		}
-	}
+	//{
+	//	auto player1 = new PlayerActor("player1");
+	//	for (int i = 0; i < 10; ++i)
+	//	{
+	//		PUSH_TASK(player1, PlayerActor::Uplevel);
+	//	}
+	//}
 }
 

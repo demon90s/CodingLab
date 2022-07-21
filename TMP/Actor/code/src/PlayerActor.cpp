@@ -12,6 +12,8 @@ void PlayerActor::ChangeName(const std::string& name)
 	m_name = name;
 
 	m_log.Print("ChangeName to " + m_name);
+
+	PUSH_TASK(this, Hello);
 }
 
 void PlayerActor::Uplevel()
