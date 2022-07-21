@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <mutex>
 #include <shared_mutex>
 
 class TSString
@@ -12,7 +13,8 @@ public:
 	{
 		std::string ret;
 		{
-			std::shared_lock<std::shared_mutex> lock(m_str_mutex);
+			//std::shared_lock<std::shared_mutex> lock(m_str_mutex);
+			std::lock_guard<std::mutex> lock(m_str_mutex);
 			ret = m_str;
 		}
 		return ret;
@@ -21,7 +23,8 @@ public:
 	void SetStr(const std::string &str)
 	{
 		{
-			std::unique_lock<std::shared_mutex> lock(m_str_mutex);
+			//std::unique_lock<std::shared_mutex> lock(m_str_mutex);
+			std::lock_guard<std::mutex> lock(m_str_mutex);
 			m_str = str;
 		}
 	}
@@ -32,6 +35,7 @@ public:
 	}
 
 private:
-	mutable std::shared_mutex m_str_mutex;
+	//mutable std::shared_mutex m_str_mutex;
+	mutable std::mutex m_str_mutex;
 	std::string m_str;
 };
