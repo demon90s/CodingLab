@@ -3,7 +3,7 @@
 
 void PlayerActor::Hello()
 {
-	std::string content = "Hello, I am " + m_name.GetStr();
+	std::string content = "Hello, I am " + m_name;
 	m_log.Print(content);
 }
 
@@ -11,7 +11,7 @@ void PlayerActor::ChangeName(const std::string& name)
 {
 	m_name = name;
 
-	m_log.Print("ChangeName to " + m_name.GetStr());
+	m_log.Print("ChangeName to " + m_name);
 
 	PUSH_TASK(this, Hello);
 }
@@ -19,7 +19,7 @@ void PlayerActor::ChangeName(const std::string& name)
 void PlayerActor::Uplevel()
 {
 	m_level++;
-	m_log.Print(m_name.GetStr() + " UpLevel to " + std::to_string(m_level));
+	m_log.Print(m_name + " UpLevel to " + std::to_string(m_level));
 
 	RankActor* rank_actor = RankActor::GetInstance();
 	PUSH_TASK_EX(rank_actor, RankActor::OnPlayerUplevel, this);

@@ -19,12 +19,12 @@ public:
 	void Uplevel();
 
 public:
-	std::string GetName() const { return m_name.GetStr(); }
+	const std::string &GetName() const { return m_name; }
 	int GetLevel() const { return m_level; }
 
 private:
 	LogActor m_log{"PlayerActor"};
 
-	TSString m_name;
+	std::string m_name;
 	int m_level = 0;
 };
