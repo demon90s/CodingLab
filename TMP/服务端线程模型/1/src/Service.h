@@ -14,7 +14,7 @@ public:
 	void Stop();
 	
 private:
-	virtual void Loop();
+	virtual void WorkThread();
 
 	bool m_is_running = false;
 	std::thread *m_thread = nullptr;

@@ -12,7 +12,7 @@ void Service::Start()
 	if (!m_is_running)
 	{
 		m_is_running = true;
-		m_thread = new std::thread(&Service::Loop, this);
+		m_thread = new std::thread(&Service::WorkThread, this);
 	}
 }
 
@@ -29,9 +29,9 @@ void Service::Stop()
 	}
 }
 
-void Service::Loop()
+void Service::WorkThread()
 {
-	std::cout << "Service begin, thread id: " << std::this_thread::get_id() << std::endl;
+	std::cout << "WorkThread begin, thread id: " << std::this_thread::get_id() << std::endl;
 
 	while (m_is_running)
 	{
